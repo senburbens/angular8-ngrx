@@ -12,6 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/@components/header/header.component';
 import { PostsListComponent } from './post/posts-list/posts-list.component';
 import { CounterComponent } from './counter/counter/counter.component';
+import { AddPostComponent } from './post/add-post/add-post.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EditPostComponent } from './post/edit-post/edit-post.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +22,14 @@ import { CounterComponent } from './counter/counter/counter.component';
     CounterComponent,
     HomeComponent,
     PostsListComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddPostComponent,
+    EditPostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({
       logOnly: environment.production
