@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Post } from 'src/app/@models/post.model';
 import { AppState } from 'src/app/store/app.state';
-import { addPost } from '../posts-list/state/posts.actions';
+import { addPost } from '../state/posts.actions';
 
 @Component({
   selector: 'app-add-post',

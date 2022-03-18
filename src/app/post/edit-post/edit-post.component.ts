@@ -5,8 +5,8 @@ import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { Post } from 'src/app/@models/post.model';
 import { AppState } from 'src/app/store/app.state';
-import { updatePost, UPDATE_POST_ACTION } from '../posts-list/state/posts.actions';
-import { getPostById } from '../posts-list/state/posts.selectors';
+import { updatePost, UPDATE_POST_ACTION } from '../state/posts.actions';
+import { getPostById } from '../state/posts.selectors';
 
 @Component({
   selector: 'app-edit-post',
