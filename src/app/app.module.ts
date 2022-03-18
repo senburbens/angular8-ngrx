@@ -7,7 +7,6 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
-import { appReducer } from './store/app.state';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/@components/header/header.component';
 
@@ -20,7 +19,7 @@ import { HeaderComponent } from './shared/@components/header/header.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot(appReducer),
+    StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
       logOnly: environment.production
     }),
