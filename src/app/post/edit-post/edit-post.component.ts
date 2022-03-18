@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { Post } from 'src/app/@models/post.model';
 import { AppState } from 'src/app/store/app.state';
+import { updatePost, UPDATE_POST_ACTION } from '../posts-list/state/posts.actions';
 import { getPostById } from '../posts-list/state/posts.selectors';
 
 @Component({
@@ -52,7 +53,18 @@ export class EditPostComponent implements OnInit, OnDestroy {
   }
 
   onUpdatePost() {
+    if (!this.postForm.valid) return;
 
+    const title = this.postForm.value.title;
+    const description = this.postForm.value.description;
+
+    const post: Post = {
+      id: this.post.id,
+      title: title,
+      description: description
+    }
+    // dispatch the action
+    this.store.dispatch(updatePost({ post }));
   }
 
   public showDescriptionErrors(): string | void {

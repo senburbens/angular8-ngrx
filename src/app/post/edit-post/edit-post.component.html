@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <h3>Update Post</h3>
     <hr />
-    <form [formGroup]="postForm" (ngOnSubmit)="onUpdatePost()">
+    <form [formGroup]="postForm" (ngSubmit)="onUpdatePost()">
       <div class="mb-3">
         <label>Title</label>
         <input type="text" class="form-control" formControlName="title" />
