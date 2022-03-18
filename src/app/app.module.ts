@@ -9,17 +9,24 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { counterReducer } from './counter/state/counter.reducers';
 import { CounterComponent } from './counter/counter.component';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent
+    CounterComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ counter: counterReducer }),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    StoreModule.forRoot({
+      counter: counterReducer
+    }),
+    StoreDevtoolsModule.instrument({
+     // maxAge: 25,
+      logOnly: environment.production
+    }),
     EffectsModule.forRoot([])
   ],
   providers: [],
