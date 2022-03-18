@@ -7,24 +7,25 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
-import { counterReducer } from './counter/state/counter.reducers';
-import { CounterComponent } from './counter/counter.component';
-import { PostsComponent } from './posts/posts.component';
+import { appReducer } from './store/app.state';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './shared/@components/header/header.component';
+import { PostsListComponent } from './post/posts-list/posts-list.component';
+import { CounterComponent } from './counter/counter/counter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterComponent,
-    PostsComponent
+    HomeComponent,
+    PostsListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({
-      counter: counterReducer
-    }),
+    StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({
-     // maxAge: 25,
       logOnly: environment.production
     }),
     EffectsModule.forRoot([])
