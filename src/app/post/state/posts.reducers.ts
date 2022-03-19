@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { Post } from 'src/app/@models/post.model';
+import { Post } from '../@models/post.model';
 import { addPost, deletePost, updatePost } from './posts.actions';
 import { initialPostsState } from './posts.state';
 

@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { Post } from "src/app/@models/post.model";
+import { Post } from "../@models/post.model";
 import { PostsState } from "./posts.state";
 
 export const POST_STATE_NAME = 'posts';
